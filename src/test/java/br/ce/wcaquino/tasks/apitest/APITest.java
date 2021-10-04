@@ -29,7 +29,7 @@ public class APITest {
 	@Test
 	public void deveIncluirTarefaComSucesso() {
 		RestAssured.given()
-			.body("{\"task\": \"Casa 34 é casa\",\"dueDate\": \"2021-10-02\"}")
+			.body("{\"task\": \"Casa 34 é casa\",\"dueDate\": \"2030-10-02\"}")
 			.contentType(ContentType.JSON) //falar para o RestAssured que no body foi um json
 		.when()
 			.post("/todo")
@@ -40,7 +40,7 @@ public class APITest {
 	}
 	
 	@Test
-	public void na0deveIncluirTarefaComDadosInavalidosSucesso() {
+	public void naodeveIncluirTarefaComDadosInavalidos() {
 		RestAssured.given()
 			.body("{\"task\": \"Casa 34 é casa\",\"dueDate\": \"2020-10-02\"}")
 			.contentType(ContentType.JSON) //falar para o RestAssured que no body foi um json com data invalida
